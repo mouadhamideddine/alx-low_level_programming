@@ -13,13 +13,13 @@ int main(void)
 	int Count;
 	int Count_Low;
 
-	Count_Low = 0
+	Count_Low = 0;
 	for (; Count_Low < 26; Count_Low++)
 	{
 		Low_Letter = 'a' + Count_Low;
 		putchar(Low_Letter);
 	}
-	Count = 0
+	Count = 0;
 	for (; Count < 26; Count++)
 	{
 		Up_Letter = 'A' + Count;
