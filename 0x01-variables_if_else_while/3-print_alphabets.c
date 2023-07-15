@@ -13,15 +13,17 @@ int main(void)
 	int Count;
 	int Count_Low;
 
-	for (Count = 0; Count < 26; Count++)
-	{
-		Up_Letter = 'A' + Count;
-		putchar(Up_Letter);
-	}
-	for (Count_Low; Count_Low < 26; Count_Low++)
+	Count_low = 0
+	for (; Count_Low < 26; Count_Low++)
 	{
 		Low_Letter = 'a' + Count_Low;
 		putchar(Low_Letter);
+	}
+	Count = 0
+	for (; Count < 26; Count++)
+	{
+		Up_Letter = 'A' + Count;
+		putchar(Up_Letter);
 	}
 	putchar('\n');
 	return (0);
