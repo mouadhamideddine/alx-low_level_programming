@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - Entry 
+ * main - Entry
  *
  * description : prints hexa
  *
@@ -16,7 +16,7 @@ int main(void)
 		putchar('0' + count);
 	}
 	count = 0;
-	for (; count <= 5 ; count ++)
+	for (; count <= 5 ; count++)
 	{
 		putchar('a' + count);
 	}
