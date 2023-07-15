@@ -13,7 +13,7 @@ int main(void)
 	int Count;
 	int Count_Low;
 
-	Count_low = 0
+	Count_Low = 0
 	for (; Count_Low < 26; Count_Low++)
 	{
 		Low_Letter = 'a' + Count_Low;
