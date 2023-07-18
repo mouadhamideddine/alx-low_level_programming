@@ -1,8 +1,10 @@
 #include "main.h"
 /**
- * int _islower - function
+ * _islower - function
  *
- * description : check if lower
+ * description : check if parametre c is lower
+ *
+ * @c : input
  *
  * Return: 1 if lower 0 if otherwise
  */
@@ -12,7 +14,7 @@ int _islower(int c)
 	{
 		return (1);
 	}
-	else 
+	else
 	{
 		return (0);
 	}
