@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- *main - Entry point of the program
+ *print_alphabet - function 
  *
  *description : print alphabets
  *
- *Return: always 0 (success)
+ *Return: None (success)
  */
 void print_alphabet(void)
 {
@@ -14,5 +14,5 @@ void print_alphabet(void)
 	{
 		_putchar(index);
 	}
+	_putchar('\n');
 }
-
