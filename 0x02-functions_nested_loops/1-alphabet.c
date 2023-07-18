@@ -6,9 +6,13 @@
  *
  *Return: always 0 (success)
  */
-
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	int index = 97;
+
+	for (; index < 123; index++)
+	{
+		_putchar(index);
+	}
 }
+
