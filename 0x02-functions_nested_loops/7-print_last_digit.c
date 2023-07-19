@@ -4,11 +4,14 @@
  *
  *description : print_last_digit
  *
+ * @x: parameter
+ *
  * Return: returns values of the last digit
  */
 int print_last_digit(int x)
 {
 	int digit;
+
 	if (x < 0)
 	{
 		x = -x;
