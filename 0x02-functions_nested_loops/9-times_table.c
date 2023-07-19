@@ -7,7 +7,6 @@
  */
 void times_table(void)
 {
-	int second;
 	int result;
 	int first_digit;
 	int second_digit;
