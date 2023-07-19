@@ -38,16 +38,18 @@ void print_to_98(int n)
 				_putchar(',');
 				_putchar(' ');
 			}
-			else if (n < 99)
+			else if (n <= 99)
 			{
 				first_digit = n / 10;
 				second_digit = n % 10;
 				_putchar(first_digit + '0');
 				_putchar(second_digit + '0');
+				_putchar(',');
+				_putchar(' ');
 			}
 		}
 	}
-	if (n<98)
+	else if (n<98)
 	{
 		for (; n <= 98; n++)
 		{
@@ -71,4 +73,11 @@ void print_to_98(int n)
 			}
 		}
 	}
+	else if (n == 98)
+	{
+		_putchar((n /10));
+		_putchar((n % 10));
+		_putchar('\n');
+	}
+
 }
