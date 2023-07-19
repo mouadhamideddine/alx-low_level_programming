@@ -15,17 +15,22 @@ void times_table(void)
 
 	for (table = 0; table < 10; table++)
 	{
-		for (multiplier = 0; multiplier < 10; multiplier++)
+		_putchar('0');
+		_putchar(',');
+		for (multiplier = 1; multiplier < 10; multiplier++)
 		{
 			result = table * multiplier;
 			if (result < 10)
 			{
-			_putchar(result +'0');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(result +'0');
 			}
 			else if (result > 9)
 			{
 				first_digit = result / 10;
 				second_digit = result % 10;
+				_putchar(' ');
 				_putchar(first_digit + '0');
 				_putchar(second_digit + '0');
 			}
@@ -36,15 +41,6 @@ void times_table(void)
 			else
 			{
 				_putchar(',');
-				if (result < 10)
-				{
-					_putchar(' ');
-					_putchar(' ');
-				}
-				else
-				{
-					_putchar(' ');
-				}
 			}
 		}
 	}
