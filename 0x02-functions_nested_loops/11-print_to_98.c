@@ -62,7 +62,7 @@ void print_to_98(int n)
 				_putchar('\n');
 				break;
 			}
-			else if (n < 98 && n>10 )
+			else if (n < 98 && n => 10 )
 			{
 				first_digit = n / 10;
 				second_digit = n % 10;
