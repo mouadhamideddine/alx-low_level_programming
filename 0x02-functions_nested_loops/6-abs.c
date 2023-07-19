@@ -4,6 +4,8 @@
  *
  * description : return absolute of a number
  *
+ * @x : input
+ *
  * Return: Absolute of an integer
  *
  */
