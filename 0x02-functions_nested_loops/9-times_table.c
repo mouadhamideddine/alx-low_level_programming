@@ -22,7 +22,7 @@ void times_table(void)
 			_putchar(first_digit + '0');
 			_putchar(second_digit + '0');
 		}
-		else if (result < 9)
+		else if (result < 10)
 		{
 		_putchar(result + '0');
 		}
