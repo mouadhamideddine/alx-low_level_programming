@@ -1,5 +1,6 @@
 #include "main.h"
-/**times_table - function
+/**
+ * times_table - function
  *
  * description : 9times table
  *
@@ -24,7 +25,7 @@ void times_table(void)
 			{
 				_putchar(' ');
 				_putchar(' ');
-				_putchar(result +'0');
+				_putchar(result + '0');
 			}
 			else if (result > 9)
 			{
@@ -34,7 +35,7 @@ void times_table(void)
 				_putchar(first_digit + '0');
 				_putchar(second_digit + '0');
 			}
-			if (multiplier ==9)
+			if (multiplier == 9)
 			{
 				_putchar('\n');
 			}
