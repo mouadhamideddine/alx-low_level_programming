@@ -19,6 +19,12 @@ void more_numbers(void)
 			}
 			_putchar((count % 10) + '0');
 		}
-		_putchar('\n');
+		if (times == 10)
+		{
+		}
+		else
+		{
+			_putchar('\n');
+		}
 	}
 }
