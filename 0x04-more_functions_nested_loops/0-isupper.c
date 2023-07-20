@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * int_isupper - checks if upper
+ * _isupper - checks if upper
  * @c : inputto check
  * Return: 1 if c uppercase 0 if otherwise
  */
