@@ -21,6 +21,7 @@ void more_numbers(void)
 		}
 		if (times == 10)
 		{
+			;
 		}
 		else
 		{
