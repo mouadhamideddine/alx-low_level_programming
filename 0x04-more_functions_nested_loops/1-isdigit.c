@@ -1,3 +1,5 @@
+#include "main.h"
+
 int _isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
@@ -9,4 +11,3 @@ int _isdigit(int c)
 		return (0);
 	}
 }
-
