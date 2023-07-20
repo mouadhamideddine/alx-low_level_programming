@@ -9,7 +9,7 @@ void more_numbers(void)
 	int times;
 	int count;
 
-	for (times = 0; times < 11; times++)
+	for (times = 0; times < 10; times++)
 	{
 		for (count = 0; count < 15; count++)
 		{
@@ -19,7 +19,7 @@ void more_numbers(void)
 			}
 			_putchar((count % 10) + '0');
 		}
-		if (times == 10)
+		if (times == 60)
 		{
 			;
 		}
