@@ -3,7 +3,7 @@
  * print_line - print lines _
  * description : above
  * @n : number of times to write _
- * Return: None 
+ * Return: None
  */
 void print_line(int n)
 {
