@@ -27,6 +27,5 @@ int main(void)
 			printf("%d ", count);
 		}
 	}
-	printf("\n");
 	return (0);
 }
