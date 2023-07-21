@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - entry
- * description : print 1 to 100 _ for %3= 0 Fizz _for %5=0 buzz _for %5=0 and 
+ * description : print 1 to 100 _ for %3= 0 Fizz _for %5=0 buzz _for %5=0 and
  * Return: None
  */
 int main(void)
