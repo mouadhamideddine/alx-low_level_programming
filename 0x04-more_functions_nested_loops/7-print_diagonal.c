@@ -9,29 +9,29 @@ void print_diagonal(int n)
 {
 	int count;
 	int spaces;
-	if (n <= 0)
-	{
-		_putchar('\n');
-		break;
-	}
-	else{
 
 	for(count = 0; count < n; count++)
 	{
-		if (count == 0)
+		if (n <= 0)
 		{
-			_putchar('\\');
+			_putchar('\n');
+			break;
 		}
 		else
 		{
-			for(spaces = 0; spaces < count; spaces++)
+			if (count == 0)
 			{
-				_putchar(' ');
+				_putchar('\\');
 			}
-			_putchar('\\');
+			else
+			{
+				for(spaces = 0; spaces < count; spaces++)
+				{
+					_putchar(' ');
+				}
+				_putchar('\\');
+			}
 		}
-		}
-	}
 		_putchar('\n');
+	}
 }
-
