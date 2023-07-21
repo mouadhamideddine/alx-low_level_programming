@@ -9,7 +9,7 @@ void print_square(int size)
 {
 	int lines;
 	int hashes;
-	
+
 	if (size <= 0)
 	{
 		_putchar('\n');
