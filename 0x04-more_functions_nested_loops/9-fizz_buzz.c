@@ -20,7 +20,14 @@ int main(void)
 		}
 		else if (count % 5 == 0)
 		{
+			if (count == 100)
+			{
+				printf("Buzz");
+			}
+			else
+			{
 			printf("Buzz ");
+			}
 		}
 		else
 		{
