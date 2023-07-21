@@ -3,7 +3,7 @@
  * description : print 1 to 100 _ for %3= 0 Fizz _for %5=0 buzz _for %5=0 and %3=0 fizzbuzz
  * Return: None
  */
-void main(void)
+int main(void)
 {
 	int count;
 
@@ -27,4 +27,5 @@ void main(void)
 		}
 	}
 	putchar('\n');
+	return (0);
 }
