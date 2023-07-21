@@ -3,11 +3,11 @@
  * description : print 1 to 100 _ for %3= 0 Fizz _for %5=0 buzz _for %5=0 and %3=0 fizzbuzz
  * Return: None
  */
-int main(void)
+int main()
 {
-	int count;
+	int count = 1;
 
-	for (count = 1; count < 101; count++)
+	for (; count < 101; count++)
 	{
 		if (count % 3 == 0 && count % 5 == 0)
 		{
