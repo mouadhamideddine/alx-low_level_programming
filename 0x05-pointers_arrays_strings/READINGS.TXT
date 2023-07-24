@@ -1,0 +1,16 @@
+array as a collection of variables of the same type.
+
+there is accessing the values using the pointer and then there is adress of the var
+
+int var = 20
+int *ip;
+
+ip = &var
+(void*) cast is used to convert a pointer to a void pointer it is a special type of pointer that can point to any data type but does have a specific type associated with it 
+
+null when you initialize your pointers variables
+
+char str[] = "hello"; in this \0 (null) added automatic
+
+char str[] = {'h', 'e', 'l', 'l', 'o', '\0'}; when you initialize an array this you must add \0
+
