@@ -8,8 +8,7 @@
  */
 void print_rev(char *s)
 {
-	/**
-	 * determine length of str*/
+	/** determine length of str*/
 	int length = 0;
 
 	while (*s != '\0')
@@ -18,11 +17,10 @@ void print_rev(char *s)
 		s++;
 	}
 	/** iterate through the word in reverse */
-	for (; length >= 0 ; length--)
+	for (; length > 0 ; length--)
 	{
 		s--;
 		_putchar(*s);
-		
 	}
 	_putchar('\n');
 }
