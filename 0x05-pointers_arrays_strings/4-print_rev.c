@@ -20,8 +20,8 @@ void print_rev(char *s)
 	/** iterate through the word in reverse */
 	for (; length >= 0 ; length--)
 	{
-		_putchar(*s);
 		s--;
+		_putchar(*s);
 		
 	}
 	_putchar('\n');
