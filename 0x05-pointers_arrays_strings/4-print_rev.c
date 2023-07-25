@@ -17,6 +17,7 @@ void print_rev(char *s)
 		length++;
 		s++;
 	}
+	s = s - 1
 	/** iterate through the word in reverse */
 	for (; length >=0 ; length--)
 	{
