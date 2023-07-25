@@ -17,11 +17,10 @@ void print_rev(char *s)
 		length++;
 		s++;
 	}
-	s--;
 	/** iterate through the word in reverse */
 	for (; length >=0 ; length--)
 	{
-		_putchar(*s);
+		_putchar(*(s-1));
 		s--;
 	}
 	_putchar('\n');
