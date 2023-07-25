@@ -18,7 +18,7 @@ void print_rev(char *s)
 		s++;
 	}
 	/** iterate through the word in reverse */
-	for (; length >=0 ; length--)
+	for (; length > 0 ; length--)
 	{
 		s--;
 		_putchar(*s);
