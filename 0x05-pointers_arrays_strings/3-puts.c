@@ -8,12 +8,12 @@
  */
 void _puts(char *str)
 {
-	char *protect = str;
+	
 
-	while (*protect != '\0')
+	while (str != '\0')
 	{
-		_putchar(*protect);
-		protect++;
+		_putchar(str);
+		str++;
 	}
 	_putchar('\n');
 }
