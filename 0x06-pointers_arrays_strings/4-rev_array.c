@@ -27,7 +27,7 @@ void reverse_array(int *a, int n)
 
 	for (; size > 0; size--)
 	{
-		store = start;
+		store = *start;
 		*start = *end;
 		*end = store;
 		start++;
