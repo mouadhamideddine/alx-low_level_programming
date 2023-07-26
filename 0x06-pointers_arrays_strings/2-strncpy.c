@@ -8,6 +8,7 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
+	char *start = dest;
 	for (; n > 0;n--)
 	{
 		*dest = *src;
