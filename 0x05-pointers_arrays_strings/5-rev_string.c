@@ -29,7 +29,7 @@ void rev_string(char *s)
 	while (start < end)
 	{
 		store = *start;
-		*start = *end ;
+		*start = *end;
 		*end = store;
 		start++;
 		end--;
