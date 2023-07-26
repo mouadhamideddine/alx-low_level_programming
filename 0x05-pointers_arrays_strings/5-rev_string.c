@@ -9,8 +9,9 @@
 void rev_string(char *s)
 {
 	int length = 0;
-	int counter = 0;
 	char store;
+	char *end;
+	char *start;
 
 	if (*s == '\0')
 	{
@@ -23,8 +24,8 @@ void rev_string(char *s)
 	}
 	length--;
 
-	char *end = &s[length];
-	char *start = &s[0];
+	end = &s[length];
+	start = &s[0];
 	while (start < end)
 	{
 		store = *start;
