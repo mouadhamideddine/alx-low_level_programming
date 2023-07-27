@@ -11,7 +11,7 @@ char *string_toupper(char *str)
 
 	if (*str == '\0')
 	{
-		return;
+		return(str);
 	}
 	while (str[length_str] != '\n')
 	{
