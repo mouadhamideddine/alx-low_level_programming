@@ -8,3 +8,17 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
+	char *pd = dest;
+	char store;
+	
+	if (*pd == '\0')
+	{
+		return (dest);
+	}
+
+	for (; n > 0; n--)
+	{
+		*pd = *src;
+		pd++;
+		src++;
+	}
