@@ -1,15 +1,16 @@
 #include "main.h"
 /**
  * string_toupper - changes all lowercase to upper
+ * @str : string
  * Return: Pointer
  */
 char *string_toupper(char *str)
 {
-	char *p = str ;
+	char *p = str;
 
 	if (*str == '\0')
 	{
-		return(str);
+		return (str);
 	}
 	while (*p != ('\0'))
 	{
@@ -19,5 +20,5 @@ char *string_toupper(char *str)
 		}
 		p++;
 	}
-	return(str);
+	return (str);
 }
