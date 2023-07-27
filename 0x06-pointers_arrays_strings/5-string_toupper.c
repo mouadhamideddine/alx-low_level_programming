@@ -9,6 +9,10 @@ char *string_toupper(char *str)
 	int asci_value = 0;
 	char ch;
 
+	if (str[0] == '\0')
+	{
+		return;
+	}
 	while (str[length_str] != '\n')
 	{
 		length_str++;
