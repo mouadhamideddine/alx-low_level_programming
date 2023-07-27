@@ -30,6 +30,10 @@ char *string_toupper(char *str)
 			ch = (char) asci_value;
 			str[length_str] = ch;
 		}
+		else
+		{
+			;
+		}
 	}
 	return (str);
 }
