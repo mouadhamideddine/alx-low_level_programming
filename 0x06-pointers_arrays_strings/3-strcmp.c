@@ -17,10 +17,10 @@ int _strcmp(char *s1, char *s2)
 		result = (int) *ps1 - (int) *ps2;
 		if (result != 0)
 		{
-			return(result);
+			return (result);
 		}
 		ps1++;
 		ps2++;
 	}
-	return(result);
+	return (result);
 }
