@@ -1,31 +1,24 @@
 #include "main.h"
 /**
- * string_toupper - changes all lowercase to upper
+ * cap_string - capitalize all first characters of words
+ * @str : string
  * Return: Pointer
  */
 char *cap_string(char *str)
 {
-	int length_str = 0;
-	int asci_value = 0;
-	char ch;
+	char delimiters[13] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	char *p = str;
+	char c;
 
-	while (str[length_str] != '\0')
+	while (*p != ('\0'))
 	{
-		length_str++;
-	}
-	for (; length_str > 0; length_str--)
-	{
-		asci_value = (int) str[length_str];
-		if (asci_value >= 65 && asci_value <= 90)
+		c = *p;
+		/** START code to replace a character to upper*/
+		if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		{
-			;
+			if (c >= 'a' && c <= 'z')
+			{
+				*p -= ( 'a' - 'A');
+			}
 		}
-		else if (asci_value >= 97 && asci_value <= 122)
-		{
-			asci_value = asci_value - 32;
-			ch = (char) asci_value;
-			str[length_str] = ch;
-		}
-	}
-	return (str);
-}
+		/**END*/
