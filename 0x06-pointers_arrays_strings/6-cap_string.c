@@ -8,17 +8,39 @@ char *cap_string(char *str)
 {
 	char delimiters[13] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 	char *p = str;
-	char c;
+	int token = 1;
+	int delimiter_incre;
 
 	while (*p != ('\0'))
 	{
-		c = *p;
-		/** START code to replace a character to upper*/
-		if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+
+		/**Delimiter search*/
+		if (token == 0)
 		{
-			if (c >= 'a' && c <= 'z')
+			for (delimiter_incre = 0; delimiter_incre < 13; delimiter_incre++)
 			{
-				*p -= ( 'a' - 'A');
+				if (*p == delimiters[delimiter_incre])
+				{
+					token = 1;
+					p++;
+					break;
+				}
+			}
+			if (token == 0)
+			{
+				p++;
 			}
 		}
+		/**End*/
+
+		/** START code to replace a character to upper*/
+		if ((*p >= 'a' && *p <= 'z') && token == 1)
+		{
+			*p -= ( 'a' - 'A');
+			token = 0;
+			p++;
+		}
 		/**END*/
+	}
+	return (str);
+}
