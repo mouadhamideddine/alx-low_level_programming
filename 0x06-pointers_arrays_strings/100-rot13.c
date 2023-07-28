@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * leet - encodes string into 1337
+ * rot13 - encodes string according to rot13
  *@str : string
  *Return: Pointer to str
  */
