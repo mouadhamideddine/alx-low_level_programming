@@ -11,7 +11,7 @@ char *leet(char *str)
 	char num_array[] = "4433007711";
 	int index;
 
-	while (*p =! '\0')
+	while (*p != '\0')
 	{
 		for (index = 0; index < 10; index++)
 		{
