@@ -11,6 +11,11 @@ unsigned int _strspn(char *s, char *accept)
 	unsigned int length = 0;
 	char *p_accept = accept;
 
+	if (*s == '\0' || *accept == '\0')
+	{
+		return (length);
+	}
+
 	while (*s >= '\0')
 	{
 		while (*p_accept != *s)
