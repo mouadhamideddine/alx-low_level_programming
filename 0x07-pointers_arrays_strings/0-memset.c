@@ -9,8 +9,8 @@
 char *_memset(char *s, char b, unsigned int n)
 {
 	char *sp = s;
-	int counter = 0;
-	for (; counter < n; counter++)
+
+	for (; n > 0; n--)
 	{
 		*sp = b;
 		sp++;
