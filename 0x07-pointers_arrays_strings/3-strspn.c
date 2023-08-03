@@ -3,7 +3,8 @@
  * _strspn - fucntion
  * @s : string provided
  * @accept : accept set of chars
- * Return: the number of bytes in the initial segment @s that consist only of @accept
+ * Return: the number of bytes in the initial segment @s
+ * that consist only of @accept
  */
 
 unsigned int _strspn(char *s, char *accept)
