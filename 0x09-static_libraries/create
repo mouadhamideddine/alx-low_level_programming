@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Collect all the .o files in the current directory
+object_files=$(ls *.o)
+
+# Create the static library
+ar rcs libmy.a $object_files
