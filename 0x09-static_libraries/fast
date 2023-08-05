@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Prompt for file name
+read -p "Enter the file name (without extension): " file_name
+
+# Compile using gcc
+gcc -c "${file_name}.c" -o "${file_name}.o"
