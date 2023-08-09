@@ -26,6 +26,12 @@ char *_strdup(char *str)
 	p = str;
 
 	dupl = malloc (size * sizeof(char));
+
+	if (dupl ==NULL)
+	{
+		return (NULL)
+	}
+
 	duplp = dupl;
 	while (*p != '\0')
 	{
