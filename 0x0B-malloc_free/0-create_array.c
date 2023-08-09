@@ -8,11 +8,6 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	if (size == 0)
-	{
-		return (NULL);
-	}
-
 	char *array = malloc(size * sizeof(char));
 	unsigned int count = 0;
 	
