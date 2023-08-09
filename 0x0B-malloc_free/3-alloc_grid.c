@@ -23,12 +23,12 @@ int **alloc_grid(int width, int height)
 		return(NULL);
 	}
 	total = width + height;
-	p_to_grid = grid;
+	p_to_grid = grid[0];
 	for (; total > 0; total--)
 	{
 		*p_to_grid = 0;
 		p_to_grid++;
 	}
-	p_to_p_grid = &grid;
+	p_to_p_grid = &grid[0];
 	return ( p_to_p_grid);
 }
