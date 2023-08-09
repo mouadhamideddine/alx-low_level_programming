@@ -29,7 +29,7 @@ char *_strdup(char *str)
 
 	if (dupl ==NULL)
 	{
-		return (NULL)
+		return (NULL);
 	}
 
 	duplp = dupl;
