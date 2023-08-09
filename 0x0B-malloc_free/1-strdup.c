@@ -9,6 +9,8 @@ char *_strdup(char *str)
 {
 	char *p = str;
 	int size = 0;
+	char *dupl;
+	char *duplp;
 
 	if (*str == '\0')
 	{
@@ -23,8 +25,8 @@ char *_strdup(char *str)
 	size += 1;
 	p = str;
 
-	char *dupl = malloc (size * sizeof(char));
-	char *duplp = dupl;
+	dupl = malloc (size * sizeof(char));
+	duplp = dupl;
 	while (*p != '\0')
 	{
 		*duplp = *p;
