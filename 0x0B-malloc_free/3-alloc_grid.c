@@ -30,5 +30,5 @@ int **alloc_grid(int width, int height)
 		p_to_grid++;
 	}
 	p_to_p_grid = grid;
-	return ( p_to_p_grid)
+	return ( p_to_p_grid);
 }
