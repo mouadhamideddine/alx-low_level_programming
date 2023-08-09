@@ -16,17 +16,13 @@ char *str_concat(char *s1, char *s2)
 	char *concp;
 	int total_size = 0;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	while (*ps1 != '\0')
+	while (ps1 != NULL && *ps1 != '\0')
 	{
 		size_s1++;
 		ps1++;
 	}
 
-	while(*ps2 != '\0')
+	while(ps2 != NULL && *ps2 != '\0')
 	{
 		size_s2++;
 		ps2++;
