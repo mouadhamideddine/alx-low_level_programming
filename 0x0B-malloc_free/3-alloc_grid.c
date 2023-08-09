@@ -8,27 +8,31 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int *grid;
-	int *p_to_grid;
-	int **p_to_p_grid;
-	int total = 0;
+	int **grid;
+	int count = 0;
+	int count_2 = 0;
 
 	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
-	grid = malloc ((width * height) * sizeof(int));
+
+	grid = malloc (height * sizeof(int*));
 	if (grid == NULL)
 	{
 		return(NULL);
 	}
-	total = width + height;
-	p_to_grid = &grid[0];
-	for (; total > 0; total--)
+	for(; count < height; count++)
 	{
-		*p_to_grid = 0;
-		p_to_grid++;
+		grid[count] = malloc (width * sizeof(int));
+		if (grid[count] == NULL)
+		{
+			return(NULL);
+		}
+		for(; count_2 < width; count_2++)
+		{
+			grid[count][count_2] = 0;
+		}
 	}
-	p_to_p_grid = &grid;
-	return ( p_to_p_grid);
 }
+
