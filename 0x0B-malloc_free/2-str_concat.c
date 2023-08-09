@@ -16,7 +16,10 @@ char *str_concat(char *s1, char *s2)
 	char *concp;
 	int total_size = 0;
 
-
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	while (*ps1 != '\0')
 	{
 		size_s1++;
@@ -28,16 +31,6 @@ char *str_concat(char *s1, char *s2)
 		size_s2++;
 		ps2++;
 	}
-	/**
-	if (size_s1 != 0)
-	{
-		size_s1 -= 1;
-	}
-	if (size_s2 != 0)
-	{
-		size_s2 -= 1;
-	}
-	**/
 	total_size = (size_s1 + size_s2) + 1;
 	conc = malloc (total_size * sizeof(char));
 
