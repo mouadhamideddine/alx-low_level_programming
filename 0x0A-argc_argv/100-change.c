@@ -1,5 +1,3 @@
-100-change.c
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
