@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * main - prints all arguments 
+ * main - prints all arguments
  * @argc: argc
  * @argv: argv
- *
  * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[])
