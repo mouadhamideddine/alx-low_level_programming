@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
 	for (check = 1; check < argc; check++)
 	{
-		if (!isdigit(argv[check]))
+		if (!isdigit(argv[check][0]))
 		{
 			printf("Error\n");
 			return (1);
