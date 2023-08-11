@@ -10,6 +10,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *result;
 	unsigned int count;
+	unsigned char *byte_result;
 	
 	if (nmemb == 0 || size == 0)
 	{
@@ -21,9 +22,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
-	for (count = 0; count < nmemb; count++)
+	byte_result = (unsigned char *)result;
+	for (count = 0; count < nmemb * size; count++)
 	{
-		((char*)result)[count] = 0;
+		byte_result[count] = 0;
 	}
 	return (result);
 }
