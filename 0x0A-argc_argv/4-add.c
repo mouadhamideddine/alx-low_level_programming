@@ -28,12 +28,12 @@ int main(int argc, char *argv[])
 			exit(1);
 		}
 		digit = atoi(argv[check]);
-		if (digit > 0)
+		if (digit >= 0)
 		{
 			result += digit;
 		}
 	}
 	printf("%d\n", result);
-	exit();
+	exit(1);
 }
 
