@@ -10,10 +10,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *result;
-	unsigned int count = 0;
-	unsigned int count1 = 0;
-	unsigned int size_s1 = 0;
-	unsigned int size_s2 = 0;
+	unsigned int count = 0, size_s2 = 0, size_s1 = 0, count1 = 0;
 
 	if (s1 == NULL)
 	{
@@ -44,7 +41,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		n = size_s2;
 	}
-	for (count = 0; count < n ;count++)
+	for (count = 0; count < n ; count++)
 	{
 		result[count1] = s2[count];
 		count1++;
