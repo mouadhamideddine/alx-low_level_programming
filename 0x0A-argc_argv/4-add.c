@@ -17,15 +17,15 @@ int main(int argc, char *argv[])
 	if (argc <= 1)
 	{
 		printf("0\n");
-		return(0);
+		return (0);
 	}
 
-	for(check = 1; check < argc; check++)
+	for (check = 1; check < argc; check++)
 	{
 		if (!isdigit(argv[check]))
 		{
 			printf("Error\n");
-			return(1);
+			return (1);
 		}
 		digit = atoi(argv[check]);
 		if (digit >= 0)
