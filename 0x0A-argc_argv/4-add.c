@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	if (argc <= 1)
 	{
 		printf("0\n");
-		exit(0);
+		return(0);
 	}
 
 	for(check = 1; check < argc; check++)
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		if (!isdigit(argv[check][0]))
 		{
 			printf("Error\n");
-			exit(1);
+			return(1);
 		}
 		digit = atoi(argv[check]);
 		if (digit >= 0)
