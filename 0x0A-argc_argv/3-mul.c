@@ -16,6 +16,6 @@ int main (int argc, char  *argv[])
 		return(1);
 	}
 	result = atoi(argv[1]) * atoi(argv[2]);
-	printf("%d", result);
+	printf("%d\n", result);
 	return(0);
 }
