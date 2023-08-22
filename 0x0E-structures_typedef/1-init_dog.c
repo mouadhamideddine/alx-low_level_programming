@@ -1,5 +1,4 @@
-#include "main.h"
-#include <stdlib.h>
+#include "dog.h"
 /**
  * init_dog - creates a struct
  * @dog : char parametre
