@@ -1,7 +1,7 @@
 #include "dog.h"
 /**
  * init_dog - creates a struct
- * @dog : char parametre
+ * @d : char parametre
  * @name : char parametre
  * @age : float parametre
  * @owner : char parametre
