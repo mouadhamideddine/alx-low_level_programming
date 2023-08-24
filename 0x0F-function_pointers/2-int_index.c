@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "function_pointers.h"
 /**
  * int_index - returns the index of the first element for
@@ -17,7 +18,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 	}
 	for (; count < size; count ++)
 	{
-		if (cmp(array[count]) != 0)
+		if (cmp(array[count]))
 		{
 			return (count);
 		}
