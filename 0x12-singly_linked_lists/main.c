@@ -19,8 +19,8 @@ int main(void)
     node2->len = 5;
     node2->next = node3;
 
-    node3->str = "!";
-    node3->len = 1;
+    node3->str = "";
+    node3->len = 0;
     node3->next = NULL;
 
     printf("Linked List:\n");
