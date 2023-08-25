@@ -1,5 +1,6 @@
-#include "main.h"
+#include <stddef.h>
 #include <stdio.h>
+#include "lists.h"
 /**
  * print_list - prints the nodes
  * @h : pointer to a list_t structure (assuming the head)
@@ -7,7 +8,7 @@
  */
 size_t print_list(const list_t *h)
 {
-	list_t *current = h;
+	const list_t *current = h;
 	size_t count = 0;
 
 	while (current != NULL)
