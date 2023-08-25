@@ -2,18 +2,19 @@
 #include <string.h>
 #include "lists.h"
 /**
- * _strlen : calculate length
+ * _strlen - calculate length
  * @str : string
- * return: size of str
+ * Return: size of str
  */
 unsigned int _strlen(const char *str)
 {
 	unsigned int length = 0;
+
 	while (str[length] != '\0')
 	{
 		length++;
 	}
-	return length;
+	return (length);
 }
 /**
  * add_node_end - adds a new node to the end
@@ -39,7 +40,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	else
 	{
-		while((*head)->next != NULL)
+		while ((*head)->next != NULL)
 		{
 			*head = (*head)->next;
 		}
