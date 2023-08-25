@@ -25,6 +25,10 @@ unsigned int _strlen(const char *str)
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *working_var = malloc(sizeof(list_t));
+	if (working_var == NULL)
+	{
+		return(NULL);
+	}
 	working_var->str = strdup(str);
 	working_var->len = _strlen(str);
 	working_var->next = *head;
