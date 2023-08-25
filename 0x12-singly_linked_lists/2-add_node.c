@@ -5,7 +5,7 @@
 /**
  * _strlen - calculate len of a str
  * @str : string
- * Return : unsigned int
+ * Return: unsigned int
  */
 unsigned int _strlen(const char *str)
 {
