@@ -8,6 +8,7 @@
 void free_list(list_t *head)
 {
 	list_t *saver;
+
 	while (head)
 	{
 		saver = head->next;
