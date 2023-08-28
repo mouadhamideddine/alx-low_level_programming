@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "main.h"
+#include "lists.h"
 /**
  * add_nodeint - adds a none at the beginning
  * @h : pointer to a pointer to a listint_t struct represent head
@@ -15,4 +15,5 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	}
 	current->n = n;
 	current->next = *head;
+	return (current);
 }
