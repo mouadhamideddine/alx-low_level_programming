@@ -22,7 +22,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		*head = current;
 		return (current);
 	}
-	while((saver->next))
+	while ((saver->next))
 	{
 		saver = saver->next;
 	}
