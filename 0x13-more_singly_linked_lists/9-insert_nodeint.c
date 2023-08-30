@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
- * insert_nodeint_at_index : as the name suggests
+ * insert_nodeint_at_index - as the name suggests
  * @head : list head
  * @idx : index
  * @n : number data for node
@@ -23,7 +23,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		new_node->next = (*head);
 		*head = new_node;
-		return(new_node);
+		return (new_node);
 	}
 	for (; current && count < idx; count++)
 	{
@@ -31,7 +31,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		{
 			new_node->next = current->next;
 			current->next = new_node;
-			return(new_node);
+			return (new_node);
 		}
 		current = current->next;
 	}
