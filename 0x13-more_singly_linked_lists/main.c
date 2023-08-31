@@ -1,29 +1,30 @@
-#include "lists.h"
 #include <stdio.h>
-#include <stddef.h>
+#include "lists.h"
 
 int main(void)
 {
     listint_t *head = NULL;
-    listint_t *node = NULL;
-    unsigned int index_to_get = 2;
+    listint_t *node;
 
-    add_nodeint(&head, 1);
-    add_nodeint(&head, 2);
-    add_nodeint(&head, 3);
-    add_nodeint(&head, 4);
+    // Create a linked list with some values
     add_nodeint(&head, 5);
+    add_nodeint(&head, 10);
+    add_nodeint(&head, 15);
+    add_nodeint(&head, 20);
+    add_nodeint(&head, 25);
 
-    printf("List elements: ");
+    // Print the linked list
+    printf("Linked List: ");
     print_listint(head);
-    printf("List length: %u\n", (unsigned int)listint_len(head));
 
-    node = get_nodeint_at_index(head, index_to_get);
-    if (node)
-        printf("Node at index %u: %d\n", index_to_get, node->n);
-    else
-        printf("Node at index %u does not exist.\n", index_to_get);
+    // Calculate the sum of the linked list
+    int total = sum_listint(head);
 
+    // Print the sum
+    printf("Sum of the linked list: %d\n", total);
+
+    // Free the memory allocated for the linked list
     free_listint(head);
-    return (0);
+
+    return 0;
 }
