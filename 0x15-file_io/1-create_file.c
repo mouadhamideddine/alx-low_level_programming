@@ -28,7 +28,7 @@ size_t _strlen(const char *str)
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd;
+	int fd, len;
 	ssize_t Bytes_w;
 
 	if (!filename)
@@ -42,14 +42,15 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	if (_strlen(text_content) == 0)
+	if (text_content)
 	{
-		return (1);
+		len = _strlen(text_content);
 	}
-	Bytes_w = write (fd, text_content,_strlen(text_content));
+	Bytes_w = write (fd, text_content, len);
 	if (Bytes_w == -1)
 	{
 		return (-1);
 	}
+
 	return (1);
 }
