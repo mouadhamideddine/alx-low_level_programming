@@ -37,7 +37,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (!text_content && fd == -1)
 		return (-1);
 
-	if(!text_content && fd != -1)
+	if (!text_content && fd != -1)
 		return (1);
 
 	bytes_w = write(fd, text_content, _strlen(text_content));
@@ -45,5 +45,5 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (bytes_w == -1)
 		return (-1);
 
-	return(1);
+	return (1);
 }
