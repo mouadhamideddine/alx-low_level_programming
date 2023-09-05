@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-
 #include "main.h"
 /**
  * read_textfile - read file
@@ -19,17 +18,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (!filename)
 	{
-		return (0);
+		return(0);
 	}
 	file = open(filename, O_RDONLY);
 	if (file == -1)
 	{
 		return (0);
 	}
-	buffer = malloc(letters);
+	buffer = malloc(letters + 1);
+	buffer[letters + 1] = '\0';
 	Bytes_Read = read(file, buffer, letters);
-	Bytes_Written = write(STDOUT_FILENO, buffer, Bytes_Read);
-	close(file);
-	free(buffer);
+	Bytes_Written = write(STDOUT_FILENO, buffer, letters);
 	return (Bytes_Written);
 }
