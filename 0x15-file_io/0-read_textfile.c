@@ -18,14 +18,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (!filename)
 	{
-		return(0);
+		return (0);
 	}
 	file = open(filename, O_RDONLY);
 	if (file == -1)
 	{
 		return (0);
 	}
-	buffer = malloc(sizeof(char)*(letters + 1));
+	buffer = malloc(sizeof(char) * (letters + 1));
 	Bytes_Read = read(file, buffer, letters);
 	buffer[Bytes_Read] = '\0';
 	Bytes_Written = write(STDOUT_FILENO, buffer, Bytes_Read);
