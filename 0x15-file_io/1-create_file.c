@@ -44,15 +44,12 @@ int create_file(const char *filename, char *text_content)
 	}
 	if (_strlen(text_content) == 0)
 	{
-		close(fd);
 		return (1);
 	}
 	Bytes_w = write (fd, text_content,_strlen(text_content));
 	if (Bytes_w == -1)
 	{
-		close(fd);
 		return (-1);
 	}
-	close(fd);
 	return (1);
 }
