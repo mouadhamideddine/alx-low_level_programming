@@ -1,7 +1,9 @@
 #include <sys/types.h>
-#include <fcnt1.h>
+#include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
+
 #include "main.h"
 /**
  * read_textfile - read file
@@ -24,7 +26,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	buffer = malloc(letters +1);
+	buffer = malloc(letters);
 	Bytes_Read = read(file, buffer, letters);
 	Bytes_Written = write(STDOUT_FILENO, buffer, Bytes_Read);
 	close(file);
