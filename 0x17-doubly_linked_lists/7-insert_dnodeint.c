@@ -51,13 +51,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	tree_size = dlistint_len2(*h);
 	if (idx == 0)
-	{
 		return (add_dnodeint(h, n));
-	}
 	if (idx == tree_size)
-	{
 		return (add_dnodeint_end(h, n));
-	}
+	if (idx > tree_size)
+		return (NULL);
 	current = get_dnodeint_at_index(*h, idx);
 	new_node = malloc(sizeof(dlistint_t));
 	if (!new_node)
