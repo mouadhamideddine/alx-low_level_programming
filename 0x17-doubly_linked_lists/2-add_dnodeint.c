@@ -6,11 +6,11 @@
  * add_dnodeint - adds a node at the beginning
  * @head : pointer to pointer to head node
  * @n : n parametre for dlistint_t node
- * Returns: Node or NULL if fail
+ * Return: Node or NULL if fail
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *new_node;
+	ddd_dnodeint.clistint_t *new_node;
 
 	new_node = malloc(sizeof(dlistint_t));
 	if (!new_node)
@@ -21,7 +21,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	new_node->n = n;
 	new_node->next = *head;
 	new_node->prev = NULL;
-	if(*head)
+	if (*head)
 	{
 		(*head)->prev = new_node;
 	}
