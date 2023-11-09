@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- * dlistint_len - calculate len of a list
+ * dlistint_len2 - calculate len of a list
  * @h : head node
  * Return: size of the list
  */
@@ -68,13 +68,5 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node->prev = prev_node;
 	prev_node->next = new_node;
 	current->prev = new_node;
-	/*
-	next_node = current->next;
-	new_node->n = n;
-	new_node->next = next_node;
-	new_node->prev = current;
-	current->next = new_node;
-	next_node->prev = new_node;
-	*/
 	return (new_node);
 }
