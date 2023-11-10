@@ -9,7 +9,7 @@ int free_first_node(dlistint_t **head)
 {
 	dlistint_t *next_to_head = NULL;
 
-	if (!(*head))
+	if (!head || !(*head))
 		return (1);
 	next_to_head = (*head)->next;
 	if (next_to_head)
@@ -90,12 +90,10 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if ( !head || !(*head) )
 	{
-		/*printf("nothead\n");*/
 		return (1);
 	}
 	if (index > tree_size)
 	{
-		/*printf("index>tree_size\n");*/
 		return (-1);
 	}
 	if (index == 0)
@@ -103,8 +101,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		/*printf("index == 0\n");*/
 		current = get_dnodeint_at_index(*head, index);
 		/*printf("current success");*/
-		returns = free_first_node(&current);
-		printf("free_fisr success");
+		/*returns = free_first_node(&current);*/
+		/*printf("free_fisr success");*/
 		return (returns);
 	}
 	if (index == tree_size)
