@@ -12,6 +12,10 @@ dlistint_t *traverse_to_end(dlistint_t **head)
 	dlistint_t *current = *head;
 	dlistint_t *prev = NULL;
 
+	if (head == NULL || *head == NULL)
+    {
+		return NULL;
+    }
 	while (current)
 	{
 		prev = current;
