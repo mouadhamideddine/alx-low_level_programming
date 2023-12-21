@@ -1,0 +1,31 @@
+Initialization:
+
+Create a structure Ht_item to represent each key-value pair.
+Create a structure HashTable to hold an array of pointers to items (Ht_item).
+The size represents the number of buckets in the hashtable, and count represents the number of key-value pairs stored.
+Creating the Hashtable:
+
+Allocate memory for the HashTable structure.
+Allocate memory for an array of pointers to Ht_item structures.
+Initialize each pointer in the array to NULL.
+Hash Function:
+
+Implement a hash function that takes a key and returns an index within the array.
+This index is where the key-value pair will be stored.
+Inserting a Key-Value Pair:
+
+Use the hash function to find the index for the given key.
+Check if there's already an item at that index. If not, create a new Ht_item for the key-value pair and store it there.
+If there is a collision (i.e., another key already exists at that index), handle it using techniques like chaining or open addressing.
+Retrieving a Value:
+
+Use the hash function to find the index for the given key.
+If there's an item at that index, check if the keys match. If yes, return the associated value.
+Deleting a Key-Value Pair:
+
+Use the hash function to find the index for the given key.
+If there's an item at that index, check if the keys match. If yes, delete the item.
+If dealing with collisions, handle them appropriately.
+Handling Collisions:
+
+Implement a strategy for dealing with collisions (e.g., chaining, open addressing).
