@@ -26,7 +26,6 @@ char* _strdup(const char* source) {
     size_t length = 0;
 
     if (!source) {
-        printf("my_strdup !source\n");
         return NULL;
     }
 
@@ -53,12 +52,10 @@ int check_collision(const char *key, hash_node_t *head)
 	{
 		if (strcmp(current->key, key) == 0)
 		{
-			printf("collision\n");
 			return(1);
 		}
 		current = current->next;
 	}
-	printf("no collision\n");
 	return(0);
 	
 }
@@ -75,12 +72,10 @@ hash_node_t* add_to_empty_list(const char *key, const char *value, hash_node_t *
 
 	if (head)
 	{
-		printf("add_to_empty_list: error head full\n");
 		return (NULL);
 	}
 	if(!key)
 	{
-		printf("add_to_empty_list: !key");
 		return (NULL);
 	}
 	current = malloc(sizeof(hash_node_t*));
@@ -92,7 +87,6 @@ hash_node_t* add_to_empty_list(const char *key, const char *value, hash_node_t *
 	current->value = _strdup(value);
 	current->next = NULL;
 	head = current;
-	printf("add_to_empty_list added %s\n",head->key);
 	return (head);
 }
 /**
@@ -109,7 +103,6 @@ hash_node_t* add_to_no_empty_list(const char *key, const char *value, hash_node_
 
 	if (!head)
 	{
-		printf("add_to_no_empty_list !head\n");
 		return (NULL);
 	}
 	current = head;
@@ -142,7 +135,6 @@ hash_node_t* add_collision(const char *key, const char *value, hash_node_t *head
 	hash_node_t *old_head = NULL;
 	hash_node_t *new_head = NULL;
 
-	printf("add collision\n");
 	if (!head)
 	{
 		/*printf("add_collision !head\n");*/
