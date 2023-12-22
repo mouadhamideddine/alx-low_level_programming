@@ -18,9 +18,9 @@ void hash_table_print(const hash_table_t *ht)
 	while (index < ht->size)
 	{
 		current = ht->array[index];
-		while(current)
+		while (current)
 		{
-			if(space_token > 0)
+			if (space_token > 0)
 			{
 				printf("'%s': '%s'", current->key, current->value);
 				space_token = -1;
@@ -36,4 +36,3 @@ void hash_table_print(const hash_table_t *ht)
 	printf("}\n");
 	return;
 }
-			
