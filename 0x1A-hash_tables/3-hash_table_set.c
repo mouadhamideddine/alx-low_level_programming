@@ -1,26 +1,4 @@
 #include "hash_tables.h"
-/**
- * check_collision - check for collision
- * @key: string
- * @head: head of linked list in the hashtable
- * Return: 1 for collision or 0 no collision
-*/
-unsigned long int hash_djb22(const unsigned char *str)
-{
-	unsigned long int hash;
-	int c;
-
-	hash = 5381;
-	while ((c = *str++))
-	{
-		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
-	}
-	return (hash);
-}
-unsigned long int key_index2(const unsigned char *key, unsigned long int size)
-{
-	return (hash_djb22(key) % size);
-}
 char* _strdup(const char* source) {
     char* destination = NULL;
     size_t length = 0;
@@ -39,25 +17,6 @@ char* _strdup(const char* source) {
     strcpy(destination, source);
 
     return destination;
-}
-int check_collision(const char *key, hash_node_t *head)
-{
-	hash_node_t *current = NULL;
-	if(!head)
-	{
-		return(0);
-	}
-	current = head;
-	while(current)
-	{
-		if (strcmp(current->key, key) == 0)
-		{
-			return(1);
-		}
-		current = current->next;
-	}
-	return(0);
-	
 }
 /**
  * add_to_empty_list - adds keyvalue pair to empty list
@@ -88,40 +47,6 @@ hash_node_t* add_to_empty_list(const char *key, const char *value, hash_node_t *
 	current->next = NULL;
 	head = current;
 	return (head);
-}
-/**
- * add_to_no_empty_list - adds keyvalue pair to non empty list
- * @key: string
- * @value: value
- * @head: linked list in the hashtable
- * Return: pointer success or NULL fail
-*/
-hash_node_t* add_to_no_empty_list(const char *key, const char *value, hash_node_t *head)
-{
-	hash_node_t *current = NULL;
-	hash_node_t *previous_node = NULL;
-
-	if (!head)
-	{
-		return (NULL);
-	}
-	current = head;
-	while(current)
-	{
-		previous_node = current;
-		current = current->next;
-	}
-	current = malloc(sizeof(hash_node_t*));
-	if (!current)
-	{
-		return (NULL);
-	}
-	current->key = _strdup(key);
-	current->value = _strdup(value);
-	current->next = NULL;
-	head = current;
-	previous_node->next = head;
-	return(head);
 }
 /**
  * add_collision - adds keyvalue pair a head of list
