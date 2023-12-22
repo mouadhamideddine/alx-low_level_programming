@@ -5,9 +5,45 @@
  * @head: head of linked list in the hashtable
  * Return: 1 for collision or 0 no collision
 */
-int check_collision(unsigned const char *key, hash_node_t *head)
+unsigned long int hash_djb22(const unsigned char *str)
 {
-	hash_node_t *current = NULL, *temp = NULL;
+	unsigned long int hash;
+	int c;
+
+	hash = 5381;
+	while ((c = *str++))
+	{
+		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+	}
+	return (hash);
+}
+unsigned long int key_index2(const unsigned char *key, unsigned long int size)
+{
+	return (hash_djb2(key) % size);
+}
+char* _strdup(const char* source) {
+    char* destination = NULL;
+    size_t length = 0;
+
+    if (!source) {
+        printf("my_strdup !source\n");
+        return NULL;
+    }
+
+    length = strlen(source);
+
+    destination = malloc(length + 1);
+    if (!destination) {
+        return NULL;
+    }
+
+    strcpy(destination, source);
+
+    return destination;
+}
+int check_collision(const char *key, hash_node_t *head)
+{
+	hash_node_t *current = NULL;
 	if(!head)
 	{
 		return(0);
@@ -17,11 +53,14 @@ int check_collision(unsigned const char *key, hash_node_t *head)
 	{
 		if (strcmp(current->key, key) == 0)
 		{
+			printf("collision\n");
 			return(1);
 		}
 		current = current->next;
 	}
+	printf("no collision\n");
 	return(0);
+	
 }
 /**
  * add_to_empty_list - adds keyvalue pair to empty list
@@ -30,30 +69,31 @@ int check_collision(unsigned const char *key, hash_node_t *head)
  * @head: linked list in the hashtable
  * Return: pointer success or NULL fail
 */
-int add_to_empty_list(unsigned const char *key, const char *value, hash_node_t *head)
+hash_node_t* add_to_empty_list(const char *key, const char *value, hash_node_t *head)
 {
 	hash_node_t *current = NULL;
 
 	if (head)
 	{
 		printf("add_to_empty_list: error head full\n");
-		return (0);
+		return (NULL);
 	}
 	if(!key)
 	{
 		printf("add_to_empty_list: !key");
-		return (0);
+		return (NULL);
 	}
-	current = malloc(sizeof(hash_node_t));
+	current = malloc(sizeof(hash_node_t*));
 	if (!current)
 	{
-		return (0);
+		return (NULL);
 	}
-	current->key = strdup(key);
-	current->value = strdup(value);
+	current->key = _strdup(key);
+	current->value = _strdup(value);
 	current->next = NULL;
 	head = current;
-	return (1);
+	printf("add_to_empty_list added %s\n",head->key);
+	return (head);
 }
 /**
  * add_to_no_empty_list - adds keyvalue pair to non empty list
@@ -62,7 +102,7 @@ int add_to_empty_list(unsigned const char *key, const char *value, hash_node_t *
  * @head: linked list in the hashtable
  * Return: pointer success or NULL fail
 */
-int add_to_no_empty_list(unsigned const char *key, const char *value, hash_node_t *head)
+hash_node_t* add_to_no_empty_list(const char *key, const char *value, hash_node_t *head)
 {
 	hash_node_t *current = NULL;
 	hash_node_t *previous_node = NULL;
@@ -70,7 +110,7 @@ int add_to_no_empty_list(unsigned const char *key, const char *value, hash_node_
 	if (!head)
 	{
 		printf("add_to_no_empty_list !head\n");
-		return (0);
+		return (NULL);
 	}
 	current = head;
 	while(current)
@@ -78,16 +118,17 @@ int add_to_no_empty_list(unsigned const char *key, const char *value, hash_node_
 		previous_node = current;
 		current = current->next;
 	}
-	current = malloc(sizeof(hash_node_t));
+	current = malloc(sizeof(hash_node_t*));
 	if (!current)
 	{
-		return (0);
+		return (NULL);
 	}
-	current->key = strdup(key);
-	current->value = strdup(value);
+	current->key = _strdup(key);
+	current->value = _strdup(value);
 	current->next = NULL;
-	previous_node->next = current;
-	return(1);
+	head = current;
+	previous_node->next = head;
+	return(head);
 }
 /**
  * add_collision - adds keyvalue pair a head of list
@@ -96,27 +137,28 @@ int add_to_no_empty_list(unsigned const char *key, const char *value, hash_node_
  * @head: linked list in the hashtable
  * Return: pointer success or NULL fail
 */
-int add_collision(unsigned const char *key, const char *value, hash_node_t *head)
+hash_node_t* add_collision(const char *key, const char *value, hash_node_t *head)
 {
 	hash_node_t *old_head = NULL;
 	hash_node_t *new_head = NULL;
 
+	printf("add collision\n");
 	if (!head)
 	{
-		printf("add_collision !head\n");
-		return (0);
+		/*printf("add_collision !head\n");*/
+		return (NULL);
 	}
 	old_head = head;
-	new_head = malloc(sizeof(hash_node_t));
+	new_head = malloc(sizeof(hash_node_t*));
 	if(!new_head)
 	{
-		return (0);
+		return (NULL);
 	}
-	new_head->key = strdup(key);
-	new_head->value = strdup(value);
+	new_head->key = _strdup(key);
+	new_head->value = _strdup(value);
 	new_head->next = old_head;
 	head = new_head;
-	return (1);
+	return (head);
 }
 /**
  * add_to_list - adds keyvalue pair to list
@@ -125,17 +167,13 @@ int add_collision(unsigned const char *key, const char *value, hash_node_t *head
  * @head: linked list in the hashtable
  * Return: 1 success or 0 fail
 */
-int add_to_list(unsigned const char *key, const char *value, hash_node_t *head)
+hash_node_t* add_to_list(const char *key, const char *value, hash_node_t *head)
 {
 	if (!head)
 	{
 		return (add_to_empty_list(key, value, head));
 	}
-	if (check_collision(key, head) == 1);
-	{
-		return (add_collision(key, value, head));
-	}
-	return (add_to_no_empty_list(key, value, head));
+	return (add_collision(key, value, head));
 }
 
 /**
@@ -149,7 +187,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t **local_array = NULL;
 	unsigned long int index;
-	unsigned char *_key = NULL;
 	hash_node_t *wanted_list = NULL;
 
 	(void)value;
@@ -159,13 +196,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return(0);
 	}
 	local_array = ht->array;
-	printf("array pointer == %p\n", (void*)local_array);
 	if (!local_array)
 	{
 		return (0);
 	}
-	_key = (unsigned char*)key;
-	index = key_index(_key, ht->size);
-	wanted_list = local_array[index];
-	return(add_to_list(_key, value, wanted_list));
+	index = key_index((const unsigned char*)key, ht->size);
+	/*wanted_list = local_array[index];*/
+	local_array[index] = add_to_list(key, value, local_array[index]);
+	ht->array = local_array;
+	return(1);
 }
