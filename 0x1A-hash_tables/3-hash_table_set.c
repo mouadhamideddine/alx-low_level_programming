@@ -191,7 +191,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		return (0);
 	}
-	index = key_index2((const unsigned char*)key, ht->size);
+	index = key_index((const unsigned char*)key, ht->size);
 	/*wanted_list = local_array[index];*/
 	local_array[index] = add_to_list(key, value, local_array[index]);
 	ht->array = local_array;
