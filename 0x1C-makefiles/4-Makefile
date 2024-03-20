@@ -1,0 +1,21 @@
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+%.o: %.c
+	$(CC) -c $< -o $@
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+clean: #deletes all Emacs and Vim temporary files along with the executable
+	$(RM) $(NAME) *~ *.swp
+oclean: #deletes the object files
+	$(RM) $(OBJ)
+fclean: #deletes all Emacs and Vim temporary files, the executable, and the object files
+	$(RM) $(OBJ) $(NAME) *~ *.swp
+re: fclean all #force recompilation
+
+all: $(NAME)
